@@ -25,6 +25,13 @@ class UserProfile {}
 ## 4.4 Files & Folders {#files-and-folders}
 Use `kebab-case` for file and folder names.
 
+```
+src/
+  user-profile/
+    index.js
+    user-service.js
+```
+
 ## 4.5 Boolean Naming {#boolean-naming}
 Prefix booleans with `is`, `has`, or `should` to indicate their nature.
 
