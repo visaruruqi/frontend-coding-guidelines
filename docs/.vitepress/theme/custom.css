@@ -10,3 +10,14 @@
   width: auto;
   white-space: nowrap;
 }
+
+/* Increase sidebar width further to keep arrows aligned */
+:root {
+  --vp-sidebar-width: 360px;
+}
+
+/* Place caret arrow at the far right with spacing from the edge */
+.VPSidebarItem .caret {
+  margin-left: auto;
+  margin-right: 8px;
+}
