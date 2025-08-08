@@ -1,5 +1,5 @@
 # Frontend Coding Guidelines
 
-Welcome to the coding standards for our frontend team. These guidelines cover naming conventions, JavaScript best practices, and Vue component structure to help maintain a consistent and readable codebase.
+Welcome to the coding standards for our frontend team. The guide covers everything from general principles and formatting to naming, syntax, Vue practices, and tooling.
 
-Navigate the sections using the sidebar to learn more.
+Use the sidebar to browse each topic and keep the codebase consistent and readable.
