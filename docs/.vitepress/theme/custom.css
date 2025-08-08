@@ -3,3 +3,10 @@
   border-left: 1px solid var(--vp-c-divider);
   padding-left: 16px;
 }
+
+/* Allow long sidebar titles to occupy the space they need */
+.VPSidebarItem .text {
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap;
+}
