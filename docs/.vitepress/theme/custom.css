@@ -11,9 +11,9 @@
   white-space: nowrap;
 }
 
-/* Increase sidebar width to prevent arrows from being hidden */
+/* Increase sidebar width further to keep arrows aligned */
 :root {
-  --vp-sidebar-width: 320px;
+  --vp-sidebar-width: 360px;
 }
 
 /* Place caret arrow at the far right with spacing from the edge */
