@@ -1,5 +1,19 @@
 # 4. Naming Conventions
 
+Names should be descriptive and meaningful. When you read a name, its purpose or
+value should be immediately clear. Functions always start with a verb that
+expresses the action they perform.
+
+```js
+// Bad
+let x = 5
+function data() {}
+
+// Good
+let userAge = 5
+function fetchData() {}
+```
+
 ## 4.1 Variables & Constants {#variables-and-constants}
 Use `camelCase` for mutable variables and `UPPER_SNAKE_CASE` for constants.
 
@@ -9,7 +23,8 @@ const MAX_RETRIES = 3
 ```
 
 ## 4.2 Functions & Methods {#functions-and-methods}
-Names should describe actions and start with a verb.
+Use `camelCase` for function names. They should describe actions and start with
+an explicit verb.
 
 ```js
 function fetchData() {}
@@ -40,4 +55,32 @@ const isActive = true
 ```
 
 ## 4.6 Acronyms & Abbreviations {#acronyms-and-abbreviations}
-Avoid abbreviations when possible. If an acronym is necessary, capitalize it uniformly (`HttpClient`).
+Write full words instead of shortened or unclear names. Only use widely
+accepted abbreviations, like `id` or `url`. If an acronym is necessary,
+capitalize it uniformly (`HttpClient`).
+
+## 4.7 Plural vs. Singular {#plural-vs-singular}
+Use singular names for single items or objects and plural names for arrays or
+collections.
+
+```js
+const user = getUser()
+const users = getUsers()
+```
+
+## 4.8 Avoid Redundant Context {#avoid-redundant-context}
+Omit repeated context when the surrounding scope already makes the meaning
+clear.
+
+```js
+// Inside a user object
+const user = {
+  name: 'Ada', // not userName
+}
+
+// Items inside a userList
+const userList = []
+userList.forEach(user => {
+  // not userListItem
+})
+```
