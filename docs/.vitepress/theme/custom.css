@@ -1,0 +1,5 @@
+/* Add indentation for sidebar submenus */
+.VPSidebarItem.level-0 .items {
+  border-left: 1px solid var(--vp-c-divider);
+  padding-left: 16px;
+}
