@@ -21,3 +21,8 @@
   margin-left: auto;
   margin-right: 8px;
 }
+
+/* Hide default navbar title to display it in the sidebar instead */
+.VPNavBarTitle .title {
+  display: none;
+}
