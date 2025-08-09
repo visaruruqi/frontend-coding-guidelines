@@ -117,18 +117,27 @@ const sidebar = [
 export default defineConfig({
   title: 'Frontend Coding Guidelines',
   description: 'JavaScript and Vue coding standards',
+  lastUpdated: true,
   themeConfig: {
     logo: '/assets/hk-logo.svg',
     search: {
       provider: 'local'
     },
-    sidebar,
     notFound: {
       title: 'Page not found',
       quote: 'But don\'t worry, you can go back to the homepage.',
       linkText: 'Go back home',
       linkHref: '/'
     }
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Guidelines', link: '/introduction' },
+      { text: 'Resources', link: '/resources' }
+    ],
+    editLink: {
+      pattern: 'https://github.com/<org>/<repo>/edit/main/docs/:path'
+    },
+    sidebar
   }
 })
 
