@@ -119,6 +119,9 @@ export default defineConfig({
   description: 'JavaScript and Vue coding standards',
   themeConfig: {
     logo: '/assets/hk-logo.svg',
+    search: {
+      provider: 'local'
+    },
     sidebar
   }
 })
