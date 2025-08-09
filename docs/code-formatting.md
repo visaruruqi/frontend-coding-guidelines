@@ -20,6 +20,8 @@ function sayHello(name) {
 ⇥console.log("Welcome!"); // tab here
 }
 ```
+:::
+
 ::: tip ✅ Good — consistent 2-space indentation
 ```javascript
 function sayHello(name) {
@@ -28,7 +30,7 @@ function sayHello(name) {
   console.log("Welcome!");
 }
 ```
-
+:::
 
 ## 3.2 Line Length {#line-length}
 Keep lines under 100 characters. Break long statements into multiple lines for readability.
