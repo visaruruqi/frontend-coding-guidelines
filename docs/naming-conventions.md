@@ -23,12 +23,33 @@ const MAX_RETRIES = 3
 ```
 
 ## 4.2 Functions & Methods {#functions-and-methods}
-Use `camelCase` for function names. They should describe actions and start with
-an explicit verb.
+Use `camelCase` for function names. They should clearly describe actions and start with an explicit verb.
 
-```js
-function fetchData() {}
+::: danger ❌ Bad Example
+```javascript
+function userData() { /* ... */ }
+function profile() { /* ... */ }
+function totalPrice() { /* ... */ }
 ```
+:::
+
+::: tip ✅ Good Example
+```javascript
+function fetchUserData() {
+  // Retrieve user information from the API
+}
+
+function updateProfile() {
+  // Update the user's profile information
+}
+
+function calculateTotalPrice(items) {
+  // Calculate the total price of all items in the cart
+}
+```
+:::
+
+
 
 ## 4.3 Classes {#classes}
 Class names use `PascalCase` and represent nouns.
