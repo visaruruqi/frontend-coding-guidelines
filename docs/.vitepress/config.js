@@ -122,7 +122,13 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
-    sidebar
+    sidebar,
+    notFound: {
+      title: 'Page not found',
+      quote: 'But don\'t worry, you can go back to the homepage.',
+      linkText: 'Go back home',
+      linkHref: '/'
+    }
   }
 })
 
