@@ -6,21 +6,25 @@
 </template>
 
 <script setup>
-import { useData } from 'vitepress'
+import { computed } from 'vue'
+import { useData, withBase } from 'vitepress'
+
 const { site, theme } = useData()
-const title = site.value.title
-const logo = theme.value.logo
+console.log('SidebarTitle component loaded',site);
+const title = computed(() => site.value.title)
+const logo = computed(() => {
+  const path = theme.value.logo
+  return path ? withBase(path) : undefined
+})
 </script>
 
 <style scoped>
 .sidebar-logo-title {
-  text-align: center;
   padding: 1rem 0;
 }
 .sidebar-logo-title .logo {
   display: block;
-  margin: 0 auto;
-  height: 40px;
+  height: 30px;
 }
 .sidebar-logo-title .title {
   margin-top: 0.5rem;

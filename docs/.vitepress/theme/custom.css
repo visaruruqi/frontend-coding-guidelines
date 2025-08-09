@@ -16,6 +16,23 @@
   --vp-sidebar-width: 360px;
 }
 
+/* Remove the default top padding from the sidebar nav */
+.VPSidebar .nav {
+  padding-top: 0 !important;
+}
+
+/* Just in case your brand block or the first group adds a margin */
+.VPSidebar .nav > :first-child {
+  margin-top: 0 !important;
+}
+
+
+@media (min-width: 960px) {
+  .VPSidebar {
+    padding-top: 0 !important;
+  }
+}
+
 /* Place caret arrow at the far right with spacing from the edge */
 .VPSidebarItem .caret {
   margin-left: auto;

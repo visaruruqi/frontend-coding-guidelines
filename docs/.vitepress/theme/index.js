@@ -7,7 +7,7 @@ export default {
   ...DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
-      'sidebar-top': () => h(SidebarTitle)
+      'sidebar-nav-before': () => h(SidebarTitle)
     })
   }
 }
