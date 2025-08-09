@@ -71,9 +71,22 @@ src/
 ## 4.5 Boolean Naming {#boolean-naming}
 Prefix booleans with `is`, `has`, or `should` to indicate their nature.
 
-```js
-const isActive = true
+::: danger ❌ Bad Example
+```javascript
+const active = true;
+const permission = false;
+const visible = true;
 ```
+:::
+
+::: tip ✅ Good Example
+```javascript
+const isActive = true;
+const hasPermission = false;
+const shouldDisplay = true;
+```
+:::
+
 
 ## 4.6 Acronyms & Abbreviations {#acronyms-and-abbreviations}
 Write full words instead of shortened or unclear names. Only use widely
