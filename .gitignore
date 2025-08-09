@@ -418,3 +418,5 @@ FodyWeavers.xsd
 *.msp
 # VitePress build output
 docs/.vitepress/dist
+.idea/
+docs/.vitepress/cache/
