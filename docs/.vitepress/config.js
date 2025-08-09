@@ -118,6 +118,7 @@ export default defineConfig({
   title: 'Frontend Coding Guidelines',
   description: 'JavaScript and Vue coding standards',
   themeConfig: {
+    logo: '/assets/hk-logo.svg',
     sidebar
   }
 })
