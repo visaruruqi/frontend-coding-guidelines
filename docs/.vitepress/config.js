@@ -117,10 +117,14 @@ const sidebar = [
 export default defineConfig({
   title: 'Frontend Coding Guidelines',
   description: 'JavaScript and Vue coding standards',
+  lastUpdated: true,
   themeConfig: {
     logo: '/assets/hk-logo.svg',
     search: {
       provider: 'local'
+    },
+    editLink: {
+      pattern: 'https://github.com/<org>/<repo>/edit/main/docs/:path'
     },
     sidebar
   }
