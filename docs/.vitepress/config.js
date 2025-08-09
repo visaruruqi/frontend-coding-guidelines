@@ -123,6 +123,12 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
+    notFound: {
+      title: 'Page not found',
+      quote: 'But don\'t worry, you can go back to the homepage.',
+      linkText: 'Go back home',
+      linkHref: '/'
+    }
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guidelines', link: '/introduction' },
