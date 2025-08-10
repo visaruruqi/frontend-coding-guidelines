@@ -39,8 +39,8 @@ const sidebar = [
       { text: '4.4 Files & Folders', link: '/naming-conventions/files-and-folders' },
       { text: '4.5 Boolean Naming', link: '/naming-conventions/boolean-naming' },
       { text: '4.6 Acronyms & Abbreviations', link: '/naming-conventions/acronyms-and-abbreviations' },
-      { text: '4.7 Plural vs. Singular', link: '/naming-conventions.html/plural-vs-singular' },
-      { text: '4.8 Avoid Redundant Context', link: '/naming-conventions.html/avoid-redundant-context' }
+      { text: '4.7 Plural vs. Singular', link: '/naming-conventions/plural-vs-singular' },
+      { text: '4.8 Avoid Redundant Context', link: '/naming-conventions/avoid-redundant-context' }
     ]
   },
   {
