@@ -38,7 +38,9 @@ const sidebar = [
       { text: '4.3 Classes', link: '/naming-conventions#classes' },
       { text: '4.4 Files & Folders', link: '/naming-conventions#files-and-folders' },
       { text: '4.5 Boolean Naming', link: '/naming-conventions#boolean-naming' },
-      { text: '4.6 Acronyms & Abbreviations', link: '/naming-conventions#acronyms-and-abbreviations' }
+      { text: '4.6 Acronyms & Abbreviations', link: '/naming-conventions#acronyms-and-abbreviations' },
+      { text: '4.7 Plural vs. Singular', link: '/naming-conventions.html#plural-vs-singular' },
+      { text: '4.8 Avoid Redundant Context', link: '/naming-conventions.html#avoid-redundant-context' }
     ]
   },
   {
@@ -128,14 +130,14 @@ export default defineConfig({
       quote: 'But don\'t worry, you can go back to the homepage.',
       linkText: 'Go back home',
       linkHref: '/'
-    }
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guidelines', link: '/introduction' },
       { text: 'Resources', link: '/resources' }
     ],
     editLink: {
-      pattern: 'https://github.com/<org>/<repo>/edit/main/docs/:path'
+      pattern: 'https://github.com/visaruruqi/frontend-coding-guidelines/edit/main/docs/:path'
     },
     sidebar
   }
