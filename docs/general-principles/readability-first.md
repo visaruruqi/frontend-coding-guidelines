@@ -111,7 +111,7 @@ export default {
 ```
 :::
 
-## ✅ Key Takeaways
+### ✅ Key Takeaways
 
 - Choose clarity over brevity.
 - Use meaningful names that convey **what** and **why**, not just **how**.
