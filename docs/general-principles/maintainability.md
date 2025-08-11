@@ -14,7 +14,7 @@ A future developer (including you) should be able to understand and modify it qu
 
 ### Example 1 — Breaking down large functions
 
-❌ **Bad** — hard to read, hard to test, and changes risk breaking unrelated logic:  
+::: danger ❌ **Bad** — hard to read, hard to test, and changes risk breaking unrelated logic:  
 ```javascript
 function processOrder(order) {
   // Validate order
@@ -43,7 +43,9 @@ function processOrder(order) {
   emailService.send(order.customerId, total);
 }
 ```
-✅ **Good** — easier to read, maintain, and test each step:  
+:::
+
+::: tip ✅ **Good** — easier to read, maintain, and test each step:  
 ```javascript
 function validateOrder(order) {
   if (!order.items?.length) throw new Error("Order must have at least one item.");
@@ -63,5 +65,6 @@ function processOrder(order) {
   emailService.send(order.customerId, total);
 }
 ```
+:::
 Now each function has one clear responsibility, and you can test them individually
 
