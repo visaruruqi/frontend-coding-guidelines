@@ -43,3 +43,45 @@
 .VPNavBarTitle .title {
   display: none;
 }
+
+/* Section outline styling to match VitePress default */
+.section-outline .content {
+  position: relative;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.section-outline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-outline .outline-title {
+  line-height: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  border-left: 1px solid var(--vp-c-divider);
+  padding-left: 16px;
+}
+
+.section-outline .outline-link {
+  display: block;
+  line-height: 32px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 1px solid var(--vp-c-divider);
+  padding-left: 16px;
+  transition: color 0.5s, border-color 0.5s;
+}
+
+.section-outline .outline-link:hover,
+.section-outline .outline-link.active {
+  color: var(--vp-c-text-1);
+  border-left-color: var(--vp-c-brand-1);
+  transition: color 0.25s, border-color 0.25s;
+}
