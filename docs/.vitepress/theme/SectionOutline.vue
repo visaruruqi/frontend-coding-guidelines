@@ -19,6 +19,7 @@
             class="outline-link"
             :href="withBase(item.link)"
             :class="{ active: isActive(item.link) }"
+            :aria-current="isActive(item.link) ? 'page' : undefined"
           >
             {{ item.text }}
           </a>
@@ -35,20 +36,21 @@ import { useData, useRoute, withBase } from 'vitepress'
 const { theme } = useData()
 const route = useRoute()
 
-const normalize = (path) => path.replace(/\/$/, '')
+const normalize = (path) => path.replace(/\.html$/, '').replace(/\/$/, '')
 const currentPath = computed(() => normalize(route.path))
 
 const currentGroup = computed(() => {
   const sidebar = theme.value.sidebar || []
   const path = currentPath.value
-  return sidebar.find((group) =>
-    group.items && group.items.some((item) => path.startsWith(normalize(item.link)))
-  ) || { items: [], text: '' }
+  return (
+    sidebar.find((group) =>
+      group.items && group.items.some((item) => path.startsWith(normalize(item.link)))
+    ) || { items: [], text: '' }
+  )
 })
 
 const items = computed(() => currentGroup.value.items)
-
-const isActive = (link) => normalize(link) === currentPath.value
+const isActive = (link) => normalize(withBase(link)) === currentPath.value
 </script>
 
 <style scoped>

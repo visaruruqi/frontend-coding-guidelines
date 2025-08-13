@@ -47,8 +47,6 @@
 /* Section outline styling to match VitePress default */
 .section-outline .content {
   position: relative;
-  border-left: 1px solid var(--vp-c-divider);
-  padding-left: 16px;
   font-size: 13px;
   font-weight: 500;
 }
@@ -74,11 +72,14 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: color 0.5s;
+  border-left: 1px solid var(--vp-c-divider);
+  padding-left: 16px;
+  transition: color 0.5s, border-color 0.5s;
 }
 
 .section-outline .outline-link:hover,
 .section-outline .outline-link.active {
   color: var(--vp-c-text-1);
-  transition: color 0.25s;
+  border-left-color: var(--vp-c-brand-1);
+  transition: color 0.25s, border-color 0.25s;
 }
