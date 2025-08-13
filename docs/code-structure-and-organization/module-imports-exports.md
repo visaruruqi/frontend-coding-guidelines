@@ -10,6 +10,7 @@ Group imports by origin for better readability:
 - Keep imports ordered and grouped.
 - Avoid unused imports.
 - Prefer named exports when exporting multiple values.
+- Use barrel files (`index.js`) to re-export related modules when it improves import clarity.
 
 ---
 
@@ -63,5 +64,46 @@ export default startApp;
 - **Use named exports** when a module provides multiple utilities.
 - **Use a default export** for the main functionality of the file.
 - **Keep related imports together** and avoid unused imports.
+
+## Named vs. Default Exports
+
+Use **named exports** for modules that expose multiple utilities or when you want imports to be explicit.
+
+```javascript
+// math-utils.js
+export function add(a, b) {
+  return a + b;
+}
+export function subtract(a, b) {
+  return a - b;
+}
+```
+
+Use a **default export** when a module has one primary functionality.
+
+```javascript
+// api-client.js
+export default function createClient(baseUrl) {
+  /* ... */
+}
+```
+
+## Barrel Files
+
+A **barrel file** re-exports modules to simplify import paths and reduce clutter in consuming files.
+
+```javascript
+// utils/index.js
+export * from './date-utils.js';
+export * from './logger.js';
+```
+
+Consumers can then import from the barrel:
+
+```javascript
+import { formatDate, logInfo } from './utils/index.js';
+```
+
+Use barrel files sparingly to avoid creating confusing dependency chains or circular references.
 
 
