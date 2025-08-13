@@ -19,11 +19,26 @@ function updateProfile() {
   // Update the user's profile information
 }
 
-function calculateTotalPrice(items) {
-  // Calculate the total price of all items in the cart
+function calculateTotal(items) {
+  // Calculate the total amount for the provided items
 }
 ```
 :::
+
+
+## Asynchronous Functions
+
+Indicate when a function performs asynchronous work. Prefix names with verbs like `load` or add an `Async` suffix when appropriate.
+
+```javascript
+async function loadUserData() {
+  // Fetch user information from the API
+}
+
+async function fetchUserDataAsync() {
+  // Fetch user information from the API
+}
+```
 
 
 
