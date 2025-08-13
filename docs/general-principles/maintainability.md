@@ -45,7 +45,7 @@ function processOrder(order) {
 ```
 :::
 
-::: tip ✅ **Good** — easier to read, maintain, and test each step:  
+::: tip ✅ **Good** — easier to read, maintain, and test each step:
 ```javascript
 function validateOrder(order) {
   if (!order.items?.length) throw new Error("Order must have at least one item.");
@@ -67,4 +67,70 @@ function processOrder(order) {
 ```
 :::
 Now each function has one clear responsibility, and you can test them individually
+
+---
+
+### Example 2 — Removing duplication
+
+::: danger ❌ **Bad** — repeated logic increases maintenance cost:
+```javascript
+async function updateProfile(data) {
+  const response = await fetch('/api/profile', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (!response.ok) {
+    throw new Error('Request failed: ' + response.status);
+  }
+  return await response.json();
+}
+
+async function updateSettings(data) {
+  const response = await fetch('/api/settings', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (!response.ok) {
+    throw new Error('Request failed: ' + response.status);
+  }
+  return await response.json();
+}
+```
+:::
+
+::: tip ✅ **Good** — extract a helper to keep code DRY:
+```javascript
+async function postJson(url, data) {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (!response.ok) {
+    throw new Error('Request failed: ' + response.status);
+  }
+  return await response.json();
+}
+
+const updateProfile = data => postJson('/api/profile', data);
+const updateSettings = data => postJson('/api/settings', data);
+```
+:::
+Extracting shared logic removes duplication and makes future changes simpler.
+
+---
+
+### Incremental refactoring techniques
+
+Refactors are safest when done gradually. Helpful techniques include:
+
+- **Work in small steps**: perform one change at a time and verify behavior after each step.
+- **Guard behavior with tests**: rely on automated tests or add your own to ensure nothing breaks.
+- **Use feature flags or parallel paths**: ship refactors alongside existing code and switch over when ready.
+- **Commit frequently**: small commits are easier to review and revert.
+- **Schedule regular cleanup**: allocate time for ongoing improvements instead of one massive overhaul.
+
+Incremental improvements reduce risk while steadily increasing maintainability.
 
