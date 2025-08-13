@@ -8,7 +8,11 @@ Vue event delegation example:
 ```vue
 <template>
   <ul @click="handleListClick">
-    <li v-for="todo in todos" :key="todo.id">
+    <li
+      v-for="todo in todos"
+      :key="todo.id"
+      :data-id="todo.id"
+    >
       {{ todo.text }}
       <button class="remove">Remove</button>
     </li>
@@ -18,15 +22,43 @@ Vue event delegation example:
 <script setup>
 import { ref } from 'vue'
 
-const todos = ref([{ id: 1, text: 'Learn' }])
+const todos = ref([
+  { id: 1, text: 'Learn' },
+  { id: 2, text: 'Build' }
+])
 
 function handleListClick(event) {
-  if (event.target.closest('button.remove')) {
-    // remove the todo
+  const button = event.target.closest('button.remove')
+  if (button) {
+    const id = Number(button.closest('li').dataset.id)
+    todos.value = todos.value.filter((t) => t.id !== id)
   }
 }
 </script>
 ```
+
+Event propagation allows the single `<ul>` listener to catch clicks that
+originate from its descendant buttons because events bubble from the target up
+through ancestor elements. You can also intercept events during the capturing
+phase or stop them from bubbling:
+
+```vue
+<template>
+  <div @click.capture="log('capture')" @click="log('bubble')">
+    <button @click.stop="log('button')">Click</button>
+  </div>
+</template>
+
+<script setup>
+function log(phase) {
+  console.log(phase)
+}
+</script>
+```
+
+Clicking the button logs `capture` and then `button`; the bubbling handler on
+the `<div>` is skipped because the `.stop` modifier prevents further
+propagation.
 
 Listener cleanup with lifecycle hooks:
 
