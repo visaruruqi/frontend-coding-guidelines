@@ -27,6 +27,10 @@ const maxRetries = 3        // Not clear that this is a constant
 ```javascript
 let userName = 'Ada'        // camelCase for mutable values
 const MAX_RETRIES = 3       // UPPER_SNAKE_CASE for constants
+const APP_CONFIG = Object.freeze({
+  apiUrl: 'https://api.example.com',
+  timeout: 5000
+})                          // read-only constant object
 ```
 :::
 
@@ -55,4 +59,14 @@ const MAX_RETRIES = 3       // UPPER_SNAKE_CASE for constants
     ```
 
     Use `Object.freeze()` or immutable patterns if you need truly constant data structures.
+
+    ```javascript
+    const APP_CONFIG = Object.freeze({
+      apiUrl: 'https://api.example.com',
+      timeout: 5000
+    })
+    // APP_CONFIG.apiUrl = 'https://other.example.com' // ❌ No effect, read-only
+    ```
+
+    This creates a read-only `const` object named `APP_CONFIG`.
 
