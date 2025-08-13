@@ -111,6 +111,26 @@ export default {
 ```
 :::
 
+### 5. Break Down Complex Chains With Descriptive Names
+
+A long chain of array operations can be hard to parse when the reader has to hold every step in their head.
+
+::: danger Bad Example
+```javascript
+const t = data.filter(d => d.a).map(d => d.b * 2).reduce((s, n) => s + n, 0)
+```
+:::
+
+::: tip Good Example
+```javascript
+const activeItems = data.filter(item => item.isActive)
+const doubledValues = activeItems.map(item => item.value * 2)
+const total = doubledValues.reduce((sum, value) => sum + value, 0)
+```
+:::
+
+Breaking the steps apart adds more lines and variables, but each name explains the intent of the operation and makes debugging easier. The trade‑off is sacrificing brevity for clarity: short expressions reduce visual clutter, yet they can hide meaning. Favor clarity unless the concise version is immediately obvious to readers.
+
 ### ✅ Key Takeaways
 
 - Choose clarity over brevity.
