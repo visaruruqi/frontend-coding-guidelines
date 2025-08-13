@@ -11,3 +11,17 @@ it('emits click', () => {
   expect(wrapper.emitted()).toHaveProperty('click')
 })
 ```
+
+For React components, Jest with Testing Library provides an ergonomic way to render components and assert on the DOM output.
+
+```js
+import { render, screen } from '@testing-library/react'
+import Greeting from './Greeting'
+
+test('renders greeting', () => {
+  render(<Greeting name="Ada" />)
+  expect(screen.getByText('Hello, Ada')).toBeInTheDocument()
+})
+```
+
+Avoid heavy reliance on snapshot testing. Snapshots can hide meaningful changes—prefer explicit assertions and limit snapshots to small, stable pieces of UI.
