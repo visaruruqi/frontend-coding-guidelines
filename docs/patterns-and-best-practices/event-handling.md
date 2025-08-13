@@ -1,4 +1,9 @@
 # 7.6 Event Handling
+This document outlines best practices for working with events in Vue
+applications. It covers delegation to minimize listeners, explains how
+propagation works, demonstrates how to remove listeners to avoid memory leaks,
+and touches on handling synthetic events from frameworks.
+
 Detach listeners when components unmount and keep handler names descriptive. Use
 event delegation to reduce the number of listeners and always remove listeners
 to prevent memory leaks.
