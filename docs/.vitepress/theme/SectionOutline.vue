@@ -50,7 +50,6 @@ const currentGroup = computed(() => {
 })
 
 const items = computed(() => currentGroup.value.items)
-
 const isActive = (link) => normalize(withBase(link)) === currentPath.value
 </script>
 
